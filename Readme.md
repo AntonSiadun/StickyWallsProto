@@ -66,7 +66,7 @@ All the new features are added first to the feature branch, from which they will
 
 # <a name="ddd"></a>DDD context maps and concepts
 
-This section will be edited as knowledge of the subject area of the project grows.
+Knowledge of the Domain is transferred to a separate folder named "Domain".
 
 # <a name="roadmap"></a>RoadMap
 
