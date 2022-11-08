@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour, ICharacter
 {
-    public bool IsGrounded => _groundChecker.IsGrounded();
+    public bool IsGrounded => true;
 
-    private IGroundChecker _groundChecker;
     private IMovement _movement;
     private IGravity _gravity;
 
