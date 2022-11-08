@@ -2,7 +2,7 @@
 using Zenject;
 using System;
 
-public class InputActionInterpretator : MonoBehaviour
+public class InputActionInterpretator : MonoBehaviour, ILongJumpBehaviour
 {
     private ICharacter _character;
     private IInput _input;
@@ -16,17 +16,7 @@ public class InputActionInterpretator : MonoBehaviour
         _character = character;
     }
 
-    private void Start()
-    {
-        if (_input == null || _character == null)
-            throw new NullReferenceException();
-
-        _input.OnTap += JumpScript;
-        _input.OnLongPress += AdditionalJumpScript;
-        _input.OnEnded += JumpEndScript;
-    }
-
-    private void JumpScript() 
+    public void BaseJump() 
     {
         if ( _character.IsGrounded)
         {
@@ -43,8 +33,7 @@ public class InputActionInterpretator : MonoBehaviour
         }
     }
 
-    //IN_JUMP - > FOR WHAT ??!!!
-    private void AdditionalJumpScript() 
+    public void AdditionalJump() 
     {
         if (_inJump)
         {
@@ -61,7 +50,7 @@ public class InputActionInterpretator : MonoBehaviour
         }
     }
 
-    private void JumpEndScript()
+    public void JumpEnd()
     {
         _counter.Reset();
         _inJump = false;
