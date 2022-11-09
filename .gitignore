@@ -74,3 +74,4 @@ crashlytics-build.properties
 #SSH keys
 keyFile
 keyFile.pub
+.editorconfig
