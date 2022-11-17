@@ -2,38 +2,42 @@ using System;
 using UnityEngine;
 using Zenject;
 
-public class MobileInputController : MonoBehaviour, IInput
+namespace AntonSiadun.StickyWallsProto.Domain.Movement.Input
 {
-    public event Action OnTap;
-    public event Action OnLongPress;
-    public event Action OnEnded;
-
-    private IConcreteInputSignature _concreteInput;
-
-    [Inject]
-    public void Initialize(IConcreteInputSignature concreteInput)
+    public class InputController : MonoBehaviour, IInput
     {
-        _concreteInput = concreteInput;
-    }
+        public event Action OnTap;
+        public event Action OnLongPress;
+        public event Action OnEnded;
 
-    private void Update()
-    {
+        private IConcreteInputSignature _concreteInput;
 
-        if (!_concreteInput.IsPressed())
-            return;
-
-        if( _concreteInput.IsPressStarted() )
+        [Inject]
+        public void Initialize(IConcreteInputSignature concreteInput)
         {
-            OnTap?.Invoke();
-            return;
+            _concreteInput = concreteInput ?? throw new NullReferenceException();
         }
 
-        if(_concreteInput.IsPressEnded())
+        private void Update()
         {
-            OnEnded?.Invoke();
-            return;
-        }
+            if (_concreteInput.IsPressStarted())
+            {
+                OnTap?.Invoke();
 
-        OnLongPress?.Invoke();
+                return;
+            }
+
+            if (_concreteInput.IsPressed())
+            {
+                OnLongPress?.Invoke();
+
+                return;
+            }
+
+            if (_concreteInput.IsPressEnded())
+            {
+                OnEnded?.Invoke();
+            }
+        }
     }
 }
