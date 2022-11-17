@@ -1,6 +1,9 @@
-﻿public interface ILongJumpBehaviour
+﻿namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
 {
-    public void BaseJump();
-    public void AdditionalJump();
-    public void JumpEnd();
+    public interface ILongJumpBehaviour
+    {
+        public void BaseJump();
+        public void AdditionalJump();
+        public void JumpEnd();
+    }
 }
