@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class MobileInputSignature : IConcreteInputSignature
+namespace AntonSiadun.StickyWallsProto.Domain.Movement.Input
 {
-    public bool IsPressed()
+    public class MobileInputSignature : IConcreteInputSignature
     {
-        return Input.touchCount == 0;
-    }
+        public bool IsPressed()
+        {
+            return UnityEngine.Input.touchCount == 0;
+        }
 
-    public bool IsPressEnded()
-    {
-        return Input.GetTouch(0).phase == TouchPhase.Ended;
-    }
+        public bool IsPressEnded()
+        {
+            return UnityEngine.Input.GetTouch(0).phase == TouchPhase.Ended;
+        }
 
-    public bool IsPressStarted()
-    {
-        return Input.GetTouch(0).phase == TouchPhase.Began;
+        public bool IsPressStarted()
+        {
+            return UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began;
+        }
     }
 }
