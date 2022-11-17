@@ -1,8 +1,11 @@
 using System;
 
-public interface IInput 
+namespace AntonSiadun.StickyWallsProto.Domain.Movement.Input
 {
-    public event Action OnTap;
-    public event Action OnLongPress;
-    public event Action OnEnded;
+    public interface IInput
+    {
+        public event Action OnTap;
+        public event Action OnLongPress;
+        public event Action OnEnded;
+    }
 }
