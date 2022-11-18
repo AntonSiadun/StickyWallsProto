@@ -6,6 +6,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
 
         public void SecondJump();
         public void Jump();
+        public void Pulse(float force);
         public void Stop();
         public void Restore();
         public void AddClutch(float force);

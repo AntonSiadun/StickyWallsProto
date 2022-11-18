@@ -63,5 +63,10 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
         {
             _movement.TurnBack();
         }
+
+        public void Pulse(float force)
+        {
+            _movement.Jump(force);
+        }
     }
 }
