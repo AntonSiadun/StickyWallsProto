@@ -5,6 +5,8 @@ using System;
 using AntonSiadun.StickyWallsProto.Domain.Movement;
 using AntonSiadun.StickyWallsProto.Domain.Movement.JumpController;
 using AntonSiadun.StickyWallsProto.Domain.Movement.Counters;
+using UnityEngine.TestTools;
+using System.Collections;
 
 public class LongJumpTests
 {
@@ -22,8 +24,8 @@ public class LongJumpTests
         Assert.Throws<NullReferenceException>(() => longJump.Initialize(null, null, null));
     }
 
-    [Test]
-    public void BaseJump_CharacterIsGrounded_JumpsCountDontChange()
+    [UnityTest]
+    public IEnumerator BaseJump_CharacterIsGrounded_JumpsCountDontChange()
     {
         
         var counterMock = Substitute.For<ICounter>();
@@ -38,6 +40,8 @@ public class LongJumpTests
         counterMock.When(x => x.Reset()).Do( x => count--);
         characterMock.IsGrounded.Returns(true);
         longJump.BaseJump();
+
+        yield return null;
 
         Assert.AreEqual( 0, count);
     }

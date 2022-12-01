@@ -9,10 +9,10 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         [SerializeField] private float _pushForceMultipier;
         [SerializeField] private string _tag;
 
-        private MainCharacter _character;
+        private ICharacter _character;
 
         [Inject]
-        public void Initialize(MainCharacter character)
+        public void Initialize(ICharacter character)
         {
             _character = character;
         }
@@ -24,8 +24,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
                 _character.Stop();
                 _character.TurnBack();
                 _character.Pulse(_pushForceMultipier);
-                Debug.Log("Elastic modificator on object:" + gameObject.name +
-                    " punched character with foirce multipier:"+_pushForceMultipier);
             }
         }
 
@@ -33,8 +31,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         {
             if (anObject.CompareTag(_tag))
             {
-                Debug.Log("Elastic modificator on object:" + gameObject.name +
-                    " restored character");
                 _character.Restore();
             }
         }

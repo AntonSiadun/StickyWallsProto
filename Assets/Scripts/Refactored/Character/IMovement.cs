@@ -8,6 +8,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
 
         public void Jump(float force);
         public void TurnBack();
+        public void SetVerticalVelocity(float velocity);
         public void ResetVelocity();
     }
 }

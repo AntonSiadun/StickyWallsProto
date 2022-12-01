@@ -9,10 +9,10 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         [SerializeField] private string _tag;
         [SerializeField] private float _clutch;
 
-        private MainCharacter _character;
+        private ICharacter _character;
 
         [Inject]
-        public void Initialize(MainCharacter character)
+        public void Initialize(ICharacter character)
         {
             _character = character;
         }
@@ -21,7 +21,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         {
             if (anObject.CompareTag(_tag))
             {
-                Debug.Log("Sliding modificator on object:"+gameObject.name+" enter character");
                 _character.TurnBack();
                 _character.Stop();
             }
@@ -31,7 +30,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         {
             if (anObject.CompareTag(_tag))
             {
-                Debug.Log("Sliding modificator on object:" + gameObject.name + " exit character");
                 _character.Restore();
             }
         }
@@ -40,7 +38,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
         {
             if (anObject.CompareTag(_tag))
             {
-                Debug.Log("Sliding modificator on object:" + gameObject.name + " stay character");
                 _character.AddClutch(_clutch);
             }
         }

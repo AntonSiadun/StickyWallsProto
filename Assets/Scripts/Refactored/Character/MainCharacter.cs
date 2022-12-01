@@ -45,19 +45,30 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
             _movement.Jump(1f);
         }
 
-        public void RestoreGravity()
+        public void Restore()
         {
             _gravity.Restore();
         }
 
-        public void StopGravity()
+        public void Stop()
         {
             _gravity.Stop();
+            _movement.ResetVelocity();
         }
+
+        public void AddClutch(float force)
+        {
+            _movement.SetVerticalVelocity(force);
+        }    
 
         public void TurnBack()
         {
             _movement.TurnBack();
+        }
+
+        public void Pulse(float force)
+        {
+            _movement.Jump(force);
         }
     }
 }

@@ -39,5 +39,11 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
         {
             _rb.velocity = new Vector2(0f, 0f);
         }
+
+        public void SetVerticalVelocity(float velocity)
+        {
+            ResetVelocity();
+            _rb.velocity = new Vector2(0f, velocity);
+        }
     }
 }

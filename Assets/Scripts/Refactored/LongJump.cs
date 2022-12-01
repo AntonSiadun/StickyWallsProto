@@ -21,6 +21,9 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
         {
             if (_counter != null)
                 CurrentCount = _counter.Current;
+
+            if (_character.IsGrounded)
+                _counter.Reset();
         }
 
         [Inject]
@@ -47,7 +50,6 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
             if (_character.IsGrounded)
             {
                 _character.Jump();
-                _counter.Reset();
                 _jumpContinue = true;
 
                 return;
