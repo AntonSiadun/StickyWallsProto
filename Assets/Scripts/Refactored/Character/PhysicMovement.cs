@@ -31,6 +31,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
 
         public void TurnBack()
         {
+            Debug.Log("Turn back");
             _direction *= -1;
         }
 

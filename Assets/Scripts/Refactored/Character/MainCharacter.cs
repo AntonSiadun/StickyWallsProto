@@ -12,12 +12,14 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement
 
         [SerializeField] private float _groundCheckRadius = 1f;
         [SerializeField] private float _secondJumpForceMultipier = 0.1f;
+        [SerializeField] private Vector2 _direction;
 
         private IMovement _movement;
         private IGravity _gravity;
 
         private void Update()
         {
+            _direction = _movement.Direction;
             Grounded = IsGrounded;
             Debug.DrawLine(transform.position, transform.position - new Vector3(0f, _groundCheckRadius, 0f));
         }

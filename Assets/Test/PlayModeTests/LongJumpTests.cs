@@ -15,23 +15,26 @@ public class LongJumpTests
     }
 
     [Test]
-    public void Initializtion_InitializeWithNullReferences_ThrowException()
+    public void Initialization_InitializeWithNullReferences_ThrowException()
     {
         var longJump = CreateLongJump();
 
-        Assert.Throws<NullReferenceException>(() => longJump.Inittialize(null, null, null));
+        Assert.Throws<NullReferenceException>(() => longJump.Initialize(null, null, null));
     }
 
     [Test]
     public void BaseJump_CharacterIsGrounded_JumpsCountDontChange()
     {
+        
         var counterMock = Substitute.For<ICounter>();
         var timerMock = Substitute.For<ITimer>();
         var characterMock = Substitute.For<ICharacter>();
         var longJump = CreateLongJump();
+        
         var count = 1;
-
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        
+        
+        longJump.Initialize(characterMock, counterMock, timerMock);
         counterMock.When(x => x.Reset()).Do( x => count--);
         characterMock.IsGrounded.Returns(true);
         longJump.BaseJump();
@@ -47,7 +50,7 @@ public class LongJumpTests
         var characterMock = Substitute.For<ICharacter>();
         var longJump = CreateLongJump();
 
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        longJump.Initialize(characterMock, counterMock, timerMock);
         characterMock.IsGrounded.Returns(false);
         counterMock.Current.Returns(1);
         longJump.BaseJump();
@@ -64,7 +67,7 @@ public class LongJumpTests
         var longJump = CreateLongJump();
         var jumpsCount = 1;
 
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        longJump.Initialize(characterMock, counterMock, timerMock);
         characterMock.IsGrounded.Returns(false);
         counterMock.Current.Returns(1);
         counterMock.When(x => x.Decrement()).Do( x => jumpsCount--);
@@ -82,7 +85,7 @@ public class LongJumpTests
         var longJump = CreateLongJump();
         var timerValue = 1f;
 
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        longJump.Initialize(characterMock, counterMock, timerMock);
         characterMock.IsGrounded.Returns(true);
         longJump.BaseJump();
         timerMock.Current.Returns(1);
@@ -102,7 +105,7 @@ public class LongJumpTests
         var timerCurrentValue = 0f;
         var timerStartValue = 1f;
 
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        longJump.Initialize(characterMock, counterMock, timerMock);
         characterMock.IsGrounded.Returns(true);
         longJump.BaseJump();
         timerMock.Current.Returns(0);
@@ -121,7 +124,7 @@ public class LongJumpTests
         var longJump = CreateLongJump();
         var timerValue = 1f;
 
-        longJump.Inittialize(characterMock, counterMock, timerMock);
+        longJump.Initialize(characterMock, counterMock, timerMock);
         timerMock.When(x => x.Substract(Arg.Any<float>())).Do(x => timerValue -= 1f);
         longJump.AdditionalJump();
 

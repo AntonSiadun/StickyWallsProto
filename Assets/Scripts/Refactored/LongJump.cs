@@ -24,7 +24,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
         }
 
         [Inject]
-        public void Inittialize(ICharacter character, ICounter counter, ITimer timer)
+        public void Initialize(ICharacter character, ICounter counter, ITimer timer)
         {
             if (character == null || counter == null || timer == null)
                 throw new NullReferenceException();
@@ -84,6 +84,5 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
         {
             _jumpContinue = false;
         }
-
     }
 }

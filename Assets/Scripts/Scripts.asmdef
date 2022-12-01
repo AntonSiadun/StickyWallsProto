@@ -2,15 +2,15 @@
     "name": "Scripts",
     "rootNamespace": "",
     "references": [
-        "Zenject",
-        ""
+        "Zenject"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "Zenject-usage.dll"
+        "Zenject-usage.dll",
+        "DOTween.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
