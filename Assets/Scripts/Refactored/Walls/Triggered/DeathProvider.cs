@@ -19,10 +19,5 @@ namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
             _state = state;
             Notify();
         }
-
-        void Start()
-        {
-            SetState(GameState.Play);
-        }
     }
 }
