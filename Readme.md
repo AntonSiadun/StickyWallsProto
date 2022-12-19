@@ -1,4 +1,4 @@
-# Sticky Walls
+# Sticky Walls(CLOSED)
 
 ![Page](Title.png?raw=true "Title")
 
