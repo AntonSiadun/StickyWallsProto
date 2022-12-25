@@ -9,6 +9,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
     {
         [SerializeField] private float _jumpDuration;
         [SerializeField] private int _jumpsCount;
+        [SerializeField] private SpriteController _spriteController;
 
         public int CurrentCount;
 
@@ -57,6 +58,7 @@ namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
             else if (_counter.Current > 0)
             {
                 _character.TurnBack();
+                _spriteController.ReverseScale();
                 _character.Jump();
                 _counter.Decrement();
                 _jumpContinue = true;
