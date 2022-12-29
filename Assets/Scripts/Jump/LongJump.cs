@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Zenject;
-using System;
 using Domain.Movement.Counters;
 
 namespace Domain.Movement.JumpController
@@ -49,20 +49,22 @@ namespace Domain.Movement.JumpController
         {
             if (_character.IsGrounded)
             {
-                _character.Jump();
-                _jumpContinue = true;
-
+                ReleaseJump();
                 return;
             }
             else if (_counter.Current > 0)
             {
                 _character.TurnBack();
-                _character.Jump();
                 _counter.Decrement();
-                _jumpContinue = true;
-
+                ReleaseJump();
                 return;
             }
+        }
+
+        private void ReleaseJump()
+        {
+            _character.Jump();
+            _jumpContinue = true;
         }
 
         public void AdditionalJump()
