@@ -5,7 +5,6 @@ namespace Domain.Interactions.Triggered
 {
     public class DestructibleModificator : ReactiveComponent
     {
-        [SerializeField] private string _tag;
         [SerializeField] private float _cooldawn = 2f;
 
         private BoxCollider2D _collider;
@@ -22,13 +21,10 @@ namespace Domain.Interactions.Triggered
 
         public override void OnExit(GameObject anObject)
         {
-            if (anObject.CompareTag(_tag))
-            {
-                if (_collider == null)
-                    throw new System.NullReferenceException("Empty collider.");
+            if (_collider == null)
+                throw new System.NullReferenceException("Empty collider.");
 
-                StartCoroutine(DisableColliderForTime());
-            }
+            StartCoroutine(DisableColliderForTime());
         }
 
         private IEnumerator DisableColliderForTime()
@@ -37,9 +33,7 @@ namespace Domain.Interactions.Triggered
                 throw new System.ArgumentException("Cooldawn value must be non-zero value.");
 
             DisableWall();
-
             yield return new WaitForSeconds(_cooldawn);
-
             EnableWall();
         }
 
@@ -58,9 +52,5 @@ namespace Domain.Interactions.Triggered
             _collider.enabled = true;
             _renderer.enabled = true;
         }
-
-        public override void OnEnter(GameObject anObject) { }
-
-        public override void OnStay(GameObject anObject) { }
     }
 }

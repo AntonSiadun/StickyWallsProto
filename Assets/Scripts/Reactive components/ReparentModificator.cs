@@ -6,7 +6,6 @@ namespace Domain.Interactions.Triggered
 {
     public class ReparentModificator : ReactiveComponent
     {
-        [SerializeField] private string _tag;
         [SerializeField] private Transform _parent;
 
         private Transform _characterTransform;
@@ -21,25 +20,17 @@ namespace Domain.Interactions.Triggered
 
         public override void OnEnter(GameObject anObject)
         {
-            if ( anObject.CompareTag(_tag) )
-            {
-                _cachedParent = _characterTransform.parent;
-                _characterTransform.parent = _parent;
-                Debug.Log("Reparent modificator on object:" + gameObject.name +
-                    " reparent character to:"+_parent.name);
-            }
+            _cachedParent = _characterTransform.parent;
+            _characterTransform.parent = _parent;
+            Debug.Log("Reparent modificator on object:" + gameObject.name +
+                " reparent character to:" + _parent.name);
         }
 
         public override void OnExit(GameObject anObject)
         {
-            if (anObject.CompareTag(_tag))
-            {
-                _characterTransform.parent = _cachedParent;
-                Debug.Log("Reparent modificator on object:" + gameObject.name +
-                    " restore character parent");
-            }
+            _characterTransform.parent = _cachedParent;
+            Debug.Log("Reparent modificator on object:" + gameObject.name +
+                " restore character parent");
         }
-
-        public override void OnStay(GameObject anObject) { }
     }
 }

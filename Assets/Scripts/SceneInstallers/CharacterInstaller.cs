@@ -11,5 +11,7 @@ public class CharacterInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<MainCharacter>().FromComponentOn(_character).AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<PhysicMovement>().FromComponentOn(_character).AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<NaturalGravity>().FromComponentOn(_character).AsSingle().NonLazy();
+
+        Container.Bind<string>().WithId("CharacterTag").FromInstance(_character.tag).AsSingle();
     }
 }
