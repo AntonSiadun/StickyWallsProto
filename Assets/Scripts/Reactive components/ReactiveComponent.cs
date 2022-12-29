@@ -1,6 +1,6 @@
 ﻿using UnityEngine; 
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
+namespace Domain.Interactions.Triggered
 {
     public abstract class ReactiveComponent : MonoBehaviour, IReactive
     {

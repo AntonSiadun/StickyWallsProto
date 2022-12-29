@@ -1,4 +1,4 @@
-﻿namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
+﻿namespace Domain.Movement.JumpController
 {
     public interface ILongJumpBehaviour
     {

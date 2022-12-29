@@ -1,6 +1,6 @@
 using UnityEngine;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered;
+using Domain.Interactions.Triggered;
 
 public class DeathSeeker : MonoBehaviour
 {

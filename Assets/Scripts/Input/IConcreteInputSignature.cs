@@ -1,4 +1,4 @@
-namespace AntonSiadun.StickyWallsProto.Domain.Movement.Input
+namespace Domain.Movement.Input
 {
     public interface IConcreteInputSignature
     {

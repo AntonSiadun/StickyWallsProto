@@ -1,6 +1,6 @@
 using System;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
+namespace Domain.Interactions.Triggered
 {
     public interface IGameStateProvider
     {

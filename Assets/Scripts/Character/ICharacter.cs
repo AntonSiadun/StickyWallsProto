@@ -1,4 +1,4 @@
-namespace AntonSiadun.StickyWallsProto.Domain.Movement
+namespace Domain.Movement
 {
     public interface ICharacter
     {

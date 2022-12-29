@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using Zenject;
 using System;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Counters;
+using Domain.Movement.Counters;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement.JumpController
+namespace Domain.Movement.JumpController
 {
     public class LongJump : MonoBehaviour, ILongJumpBehaviour
     {

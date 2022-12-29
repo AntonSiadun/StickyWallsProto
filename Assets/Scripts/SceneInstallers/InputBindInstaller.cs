@@ -1,5 +1,5 @@
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Services;
+using Domain.Services;
 
 public class InputBindInstaller : MonoInstaller
 {

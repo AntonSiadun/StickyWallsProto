@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
+using Domain.Movement;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Active
+namespace Domain.Interactions.Active
 {
     public class TurnstileModificator : MonoBehaviour
     {

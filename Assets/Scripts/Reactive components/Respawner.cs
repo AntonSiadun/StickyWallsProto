@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
-using AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered;
+using Domain.Movement;
+using Domain.Interactions.Triggered;
 
 public class Respawner : MonoBehaviour
 {

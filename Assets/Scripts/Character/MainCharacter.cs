@@ -1,9 +1,9 @@
 using UnityEngine;
 using Zenject;
 using System;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Services;
+using Domain.Movement.Services;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement
+namespace Domain.Movement
 {
     public class MainCharacter : MonoBehaviour, ICharacter
     {

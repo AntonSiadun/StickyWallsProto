@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement
+namespace Domain.Movement
 {
     public interface IMovement
     {

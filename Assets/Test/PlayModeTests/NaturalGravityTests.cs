@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using UnityEngine;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
+using Domain.Movement;
 
 public class NaturalGravityTests
 {

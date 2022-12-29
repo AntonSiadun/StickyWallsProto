@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement.Input
+namespace Domain.Movement.Input
 {
     public class InputController : MonoBehaviour, IInput
     {

@@ -1,7 +1,7 @@
 using Zenject;
 using UnityEngine;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Counters;
-using AntonSiadun.StickyWallsProto.Domain.Movement.JumpController;
+using Domain.Movement.Counters;
+using Domain.Movement.JumpController;
 
 public class JumpInstaller : MonoInstaller
 {

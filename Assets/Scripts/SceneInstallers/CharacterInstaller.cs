@@ -1,6 +1,6 @@
 using UnityEngine;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
+using Domain.Movement;
 
 public class CharacterInstaller : MonoInstaller
 {

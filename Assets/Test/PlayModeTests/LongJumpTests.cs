@@ -2,9 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using NSubstitute;
 using System;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
-using AntonSiadun.StickyWallsProto.Domain.Movement.JumpController;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Counters;
+using Domain.Movement;
+using Domain.Movement.JumpController;
+using Domain.Movement.Counters;
 using UnityEngine.TestTools;
 using System.Collections;
 

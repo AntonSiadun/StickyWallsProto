@@ -1,4 +1,4 @@
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
+namespace Domain.Interactions.Triggered
 {
     public enum GameState
     {

@@ -1,8 +1,8 @@
 using UnityEngine;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement;
+using Domain.Movement;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Triggered
+namespace Domain.Interactions.Triggered
 {
     public class ReparentModificator : ReactiveComponent
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement.Services
+namespace Domain.Movement.Services
 {
     public class GroundCheckService
     {

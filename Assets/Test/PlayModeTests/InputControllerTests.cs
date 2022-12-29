@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using NSubstitute;
 using System;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Input; 
+using Domain.Movement.Input; 
 
 public class InputControllerTests
 {

@@ -1,6 +1,6 @@
 using System;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Movement.Counters
+namespace Domain.Movement.Counters
 {
     public class Counter : ICounter
     {

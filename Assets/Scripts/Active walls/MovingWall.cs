@@ -3,7 +3,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Active
+namespace Domain.Interactions.Active
 {
     public class MovingWall : MonoBehaviour
     {

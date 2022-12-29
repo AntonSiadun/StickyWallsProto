@@ -1,5 +1,5 @@
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Input;
+using Domain.Movement.Input;
 
 public class InputInstaller : MonoInstaller
 {

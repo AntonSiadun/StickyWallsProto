@@ -1,10 +1,10 @@
 using UnityEngine;
 using System;
 using Zenject;
-using AntonSiadun.StickyWallsProto.Domain.Movement.JumpController;
-using AntonSiadun.StickyWallsProto.Domain.Movement.Input;
+using Domain.Movement.JumpController;
+using Domain.Movement.Input;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Services
+namespace Domain.Services
 {
     public class InputControlBindService : MonoBehaviour
     {

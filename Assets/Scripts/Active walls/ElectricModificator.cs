@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace AntonSiadun.StickyWallsProto.Domain.Interactions.Active
+namespace Domain.Interactions.Active
 {
     public class ElectricModificator : MonoBehaviour
     {
