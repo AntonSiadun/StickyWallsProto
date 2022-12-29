@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2552435638689982428}
   m_Layer: 0
   m_Name: Moving
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 2552435638892507047}
   m_Layer: 3
   m_Name: Fixed
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
