@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 426412521333094225}
   - component: {fileID: 426412521333094226}
   - component: {fileID: 426412521333094227}
+  - component: {fileID: 6752211368358839701}
   m_Layer: 3
   m_Name: Fixed
   m_TagString: Wall
@@ -198,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecee7a5f0b6bf43c5ad2b1ca8fd971c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Character
   _clutch: 0
 --- !u!114 &426412521333094226
 MonoBehaviour:
@@ -212,7 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50f1d3ba463b4f9080ce45234e88f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
   _parent: {fileID: 426412521333094228}
 --- !u!114 &426412521333094227
 MonoBehaviour:
@@ -227,3 +226,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 3
+--- !u!114 &6752211368358839701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426412521333094229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7f9050929f243a2913958ef8f3c9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

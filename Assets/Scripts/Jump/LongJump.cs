@@ -22,8 +22,6 @@ namespace Domain.Movement.JumpController
             if (_counter != null)
                 CurrentCount = _counter.Current;
 
-            if (_character.IsGrounded)
-                _counter.Reset();
         }
 
         [Inject]
@@ -43,6 +41,12 @@ namespace Domain.Movement.JumpController
             _counter.Count = _jumpsCount;
 
             _timer.Reset();
+            _counter.Reset();
+        }
+
+        public void ResetJumpsCount()
+        {
+            _counter.Reset();
         }
 
         public void BaseJump()
@@ -52,17 +56,21 @@ namespace Domain.Movement.JumpController
                 ReleaseJump();
                 return;
             }
+            else if (_counter.Current == _counter.Count)
+            {
+                ReleaseJump();
+                return;
+            }
             else if (_counter.Current > 0)
             {
                 _character.TurnBack();
-                _counter.Decrement();
                 ReleaseJump();
-                return;
             }
         }
 
         private void ReleaseJump()
         {
+            _counter.Decrement();
             _character.Jump();
             _jumpContinue = true;
         }
@@ -87,6 +95,11 @@ namespace Domain.Movement.JumpController
         public void JumpEnd()
         {
             _jumpContinue = false;
+        }
+
+        public void DecreaseJump()
+        {
+            _counter.Decrement();
         }
     }
 }
