@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7364481925076006954}
   - component: {fileID: 1557576225040560712}
   - component: {fileID: 9025880177183066201}
+  - component: {fileID: -1947927532019416225}
   m_Layer: 3
   m_Name: Dangerous3
   m_TagString: Untagged
@@ -137,4 +138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364b5ce5f88164de182d7fb5355a6d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
+--- !u!114 &-1947927532019416225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795089055932090143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7f9050929f243a2913958ef8f3c9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
