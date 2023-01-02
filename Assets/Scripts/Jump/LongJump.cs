@@ -12,6 +12,8 @@ namespace Domain.Movement.JumpController
 
         public int CurrentCount;
 
+        [Inject]
+        private SpriteController _spriteController;
         private ICharacter _character;
         private ICounter _counter;
         private ITimer _timer;
@@ -64,6 +66,7 @@ namespace Domain.Movement.JumpController
             else if (_counter.Current > 0)
             {
                 _character.TurnBack();
+                _spriteController.ReverseScale();
                 ReleaseJump();
             }
         }
