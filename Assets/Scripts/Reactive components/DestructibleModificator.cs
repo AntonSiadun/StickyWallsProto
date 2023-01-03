@@ -7,23 +7,20 @@ namespace Domain.Interactions.Triggered
     {
         [SerializeField] private float _cooldawn = 2f;
 
-        private BoxCollider2D _collider;
+        private BoxCollider2D[] _colliders;
         private SpriteRenderer _renderer;
 
         private void Awake()
         {
-            _collider = GetComponent<BoxCollider2D>();
+            _colliders = GetComponents<BoxCollider2D>();
             _renderer = GetComponent<SpriteRenderer>();
 
-            if (_collider == null || _renderer == null)
+            if (_colliders == null || _renderer == null)
                 throw new System.NullReferenceException("Wall doesn't have a collider or renderer.");
         }
 
         public override void OnExit(GameObject anObject)
         {
-            if (_collider == null)
-                throw new System.NullReferenceException("Empty collider.");
-
             StartCoroutine(DisableColliderForTime());
         }
 
@@ -33,24 +30,20 @@ namespace Domain.Interactions.Triggered
                 throw new System.ArgumentException("Cooldawn value must be non-zero value.");
 
             DisableWall();
-            yield return new WaitForSeconds(_cooldawn);
+            yield return new WaitForSeconds(_cooldown);
             EnableWall();
         }
 
         private void DisableWall()
         {
-            Debug.Log("Destructible modificator on object:" + gameObject.name +
-                    " disabled collider");
-            _collider.enabled = false;
-            _renderer.enabled = false;
+            foreach (var collider in _colliders)
+                collider.enabled = false;
         }
 
         private void EnableWall()
         {
-            Debug.Log("Destructible modificator on object:" + gameObject.name +
-                    " enabled collider");
-            _collider.enabled = true;
-            _renderer.enabled = true;
+            foreach (var collider in _colliders)
+                collider.enabled = true;
         }
     }
 }
