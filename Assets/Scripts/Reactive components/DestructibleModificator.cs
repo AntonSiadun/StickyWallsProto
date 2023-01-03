@@ -6,6 +6,7 @@ namespace Domain.Interactions.Triggered
     public class DestructibleModificator : ReactiveComponent
     {
         [SerializeField] private float _cooldown = 2f;
+        [SerializeField] private Animator _animator;
 
         private BoxCollider2D[] _colliders;
         private SpriteRenderer _renderer;
@@ -29,6 +30,7 @@ namespace Domain.Interactions.Triggered
             if (_cooldown < 0)
                 throw new System.ArgumentException("Cooldawn value must be non-zero value.");
 
+            _animator.SetTrigger("Destroy");
             DisableWall();
             yield return new WaitForSeconds(_cooldown);
             EnableWall();
