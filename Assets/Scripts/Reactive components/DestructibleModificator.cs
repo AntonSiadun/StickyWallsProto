@@ -5,7 +5,7 @@ namespace Domain.Interactions.Triggered
 {
     public class DestructibleModificator : ReactiveComponent
     {
-        [SerializeField] private float _cooldawn = 2f;
+        [SerializeField] private float _cooldown = 2f;
 
         private BoxCollider2D[] _colliders;
         private SpriteRenderer _renderer;
@@ -26,7 +26,7 @@ namespace Domain.Interactions.Triggered
 
         private IEnumerator DisableColliderForTime()
         {
-            if (_cooldawn < 0)
+            if (_cooldown < 0)
                 throw new System.ArgumentException("Cooldawn value must be non-zero value.");
 
             DisableWall();
