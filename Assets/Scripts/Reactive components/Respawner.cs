@@ -2,10 +2,12 @@ using UnityEngine;
 using Zenject;
 using Domain.Movement;
 using Domain.Interactions.Triggered;
+using System;
 
 public class Respawner : MonoBehaviour
 {
-    [SerializeField] private Vector3 _spawnPosition;
+    public Vector3 SpawnPosition;
+    public event Action<Vector3> OnRespawned;
 
     private MainCharacter _character;
     private IGameStateProvider _provider;
@@ -19,15 +21,21 @@ public class Respawner : MonoBehaviour
 
     private void Start()
     {
-        _provider.OnStateChanged += x => Respawn();
+        _provider.OnStateChanged += x =>
+            {
+                if (x != GameState.Dead)
+                    return;
+                Respawn();
+                OnRespawned?.Invoke(SpawnPosition);
+            };
     }
 
     public void Respawn()
     {
         _character.gameObject.SetActive(false);
-        _character.transform.position = _spawnPosition;
+        _character.transform.position = SpawnPosition;
         _character.gameObject.SetActive(true);
-        Debug.Log("Character was respawned on position:"+_spawnPosition);
+        Debug.Log("Character was respawned on position:" + SpawnPosition);
     }
 
 }
