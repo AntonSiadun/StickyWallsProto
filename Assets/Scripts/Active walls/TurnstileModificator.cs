@@ -49,5 +49,10 @@ namespace Domain.Interactions.Active
                                                 transform.localScale.y,
                                                 transform.localScale.z);
         }
+
+        public void OnDestroy()
+        {
+            StopAllCoroutines();
+        }
     }
 }

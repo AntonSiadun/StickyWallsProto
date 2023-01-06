@@ -55,5 +55,10 @@ namespace Domain.Interactions.Active
             _fixedWall.SetActive(true);
             _lightningDischarge.SetActive(false);
         }
+
+        public void OnDestroy()
+        {
+            StopAllCoroutines();
+        }
     }
 }

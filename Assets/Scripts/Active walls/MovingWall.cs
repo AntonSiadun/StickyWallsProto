@@ -30,5 +30,10 @@ namespace Domain.Interactions.Active
 
             sequence.SetLoops(-1, LoopType.Yoyo).Play();
         }
+
+        public void OnDestroy()
+        {
+            DOTween.Clear(transform);
+        }
     }
 }
