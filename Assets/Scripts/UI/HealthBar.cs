@@ -33,6 +33,18 @@ public class HealthBar : MonoBehaviour
 
     public void Show(int current, int max)
     {
-        _scrollbar.value = (float)current / (float)max;
+        Sequence sequence = DOTween.Sequence();
+
+        Tween moveToScreenSpace = transform.DOMove(_onScreenPoint.position, _stepDuration);
+        sequence.Append(moveToScreenSpace);
+
+        float newValue = (float)current / (float)max;
+        Tween changeSliderValue = DOTween.To( () => _scrollbar.value, x => _scrollbar.value = x, newValue, _stepDuration);
+        sequence.Append(changeSliderValue);
+
+        Tween moveFromScreenSpace = transform.DOMove(_offScreenPoint.position, _stepDuration);
+        sequence.Append(moveFromScreenSpace);
+
+        sequence.Play();
     }
 }
