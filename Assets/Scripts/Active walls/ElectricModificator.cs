@@ -1,19 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 namespace Domain.Interactions.Active
 {
     public class ElectricModificator : MonoBehaviour
     {
-        [SerializeField] private float _cooldown;
+        [SerializeField] private int _cooldown = 4;
         [SerializeField] private GameObject _lightningDischarge;
         [SerializeField] private GameObject _fixedWall;
+        [SerializeField] private TMP_Text _text;
 
         private void Start()
         {
             HideDischarge();
 
-            StartCoroutine(GeneratePulseOccasionally());    
+            StartCoroutine(GeneratePulseOccasionally());
         }
 
         public IEnumerator GeneratePulseOccasionally()
@@ -21,9 +23,13 @@ namespace Domain.Interactions.Active
             if (_cooldown <= 0)
                 throw new System.ArgumentException("Cooldown must be a positive value.");
 
-            for(; ; )
+            for (; ; )
             {
-                yield return new WaitForSeconds(_cooldown);
+                for (int i = _cooldown; i >= 0; i--)
+                {
+                    yield return new WaitForSeconds(1f);
+                    _text.text = i.ToString();
+                }
                 yield return ShowPulse();
             }
         }
