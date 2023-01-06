@@ -70,5 +70,10 @@ namespace Domain.Movement
         {
             _movement.Jump(force);
         }
+
+        public void TurnBackFrom(Vector3 target)
+        {
+            _movement.TurnBackFrom(target);
+        }
     }
 }

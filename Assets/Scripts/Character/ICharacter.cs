@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Domain.Movement
 {
     public interface ICharacter
@@ -11,5 +13,6 @@ namespace Domain.Movement
         public void Restore();
         public void AddClutch(float force);
         public void TurnBack();
+        public void TurnBackFrom(Vector3 target);
     }
 }
