@@ -18,7 +18,7 @@ namespace Domain.Interactions.Triggered
 
         public override void OnEnter(GameObject anObject)
         {
-            _character.TurnBack();
+            _character.TurnBackFrom( transform.position);
             _character.Stop();
         }
 
