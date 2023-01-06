@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _scrollbar;
+    [SerializeField] private float _stepDuration;
 
     [Header("Position")]
-    [SerializeField] private Vector3 _offScreen;
-    [SerializeField] private Vector3 _onScreen;
+    [SerializeField] private Transform _offScreenPoint;
+    [SerializeField] private Transform _onScreenPoint;
 
     private Health _health;
 
@@ -22,7 +23,7 @@ public class HealthBar : MonoBehaviour
 
     private void Awake()
     {
-
+        transform.position = _offScreenPoint.position;
     }
 
     private void Start()
