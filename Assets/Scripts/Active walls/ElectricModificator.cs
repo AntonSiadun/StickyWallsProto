@@ -42,16 +42,12 @@ namespace Domain.Interactions.Active
 
         private void ShowDischarge()
         {
-            Debug.Log("Electric modificator on object:" + gameObject.name +
-                    " showed discharge");
             _fixedWall.SetActive(false);
             _lightningDischarge.SetActive(true);
         }
 
         private void HideDischarge()
         {
-            Debug.Log("Electric modificator on object:" + gameObject.name +
-                    " hided discharge");
             _fixedWall.SetActive(true);
             _lightningDischarge.SetActive(false);
         }

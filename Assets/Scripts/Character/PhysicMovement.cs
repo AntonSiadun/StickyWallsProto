@@ -37,7 +37,6 @@ namespace Domain.Movement
         public void TurnBackFrom(Vector3 target)
         {
             _direction = target.x > transform.position.x ? Vector2.left : Vector2.right ;
-            Debug.Log(_direction);
         }
 
         public void ResetVelocity()

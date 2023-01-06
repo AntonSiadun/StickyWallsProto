@@ -26,8 +26,6 @@ namespace Domain.Interactions.Active
 
             sequence.SetDelay(_delay).Append(tween).AppendInterval(_delay);
 
-            tween.OnStepComplete(new TweenCallback(() => Debug.Log("Moving wall:" + gameObject.name + " ,step complete")));
-
             sequence.SetLoops(-1, LoopType.Yoyo).Play();
         }
 

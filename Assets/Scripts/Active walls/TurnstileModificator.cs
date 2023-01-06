@@ -44,7 +44,6 @@ namespace Domain.Interactions.Active
             if( transform == _character.transform.parent)
                 _character.TurnBack();
 
-            Debug.Log("Turnstile: "+ gameObject.name+" changed local scale.");
             transform.localScale = new Vector3(-transform.localScale.x,
                                                 transform.localScale.y,
                                                 transform.localScale.z);

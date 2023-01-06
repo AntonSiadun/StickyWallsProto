@@ -35,7 +35,5 @@ public class Respawner : MonoBehaviour
         _character.gameObject.SetActive(false);
         _character.transform.position = SpawnPosition;
         _character.gameObject.SetActive(true);
-        Debug.Log("Character was respawned on position:" + SpawnPosition);
     }
-
 }

@@ -22,15 +22,11 @@ namespace Domain.Interactions.Triggered
         {
             _cachedParent = _characterTransform.parent;
             _characterTransform.parent = _parent;
-            Debug.Log("Reparent modificator on object:" + gameObject.name +
-                " reparent character to:" + _parent.name);
         }
 
         public override void OnExit(GameObject anObject)
         {
             _characterTransform.parent = _cachedParent;
-            Debug.Log("Reparent modificator on object:" + gameObject.name +
-                " restore character parent");
         }
     }
 }
