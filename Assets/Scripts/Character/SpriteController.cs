@@ -17,7 +17,7 @@ public class SpriteController : MonoBehaviour
     private void Start()
     {
         _respawner.OnRespawned += x => _characterTransform.localScale =
-                                            new Vector3(- _characterTransform.localScale.x,
+                                            new Vector3(-Mathf.Abs(_characterTransform.localScale.x),
                                                         _characterTransform.localScale.y,
                                                         _characterTransform.localScale.z);
     }
