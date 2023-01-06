@@ -13,5 +13,6 @@ public class CharacterInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<NaturalGravity>().FromComponentOn(_character).AsSingle().NonLazy();
 
         Container.Bind<string>().WithId("CharacterTag").FromInstance(_character.tag).AsSingle();
+        Container.Bind<Transform>().WithId("CharacterTransform").FromInstance(_character.transform).AsSingle();
     }
 }
