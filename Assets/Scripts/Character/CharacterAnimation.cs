@@ -25,9 +25,9 @@ public class CharacterAnimation : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _animator.SetTrigger("OnAir");
         if (collision.CompareTag("Wall"))
         {
+            _animator.SetTrigger("OnAir");
             _controller.ReverseScale();
         }
     }
