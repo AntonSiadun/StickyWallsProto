@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clutch: -0.5
+  _spriteController: {fileID: 0}
 --- !u!114 &6092718081598455411
 MonoBehaviour:
   m_ObjectHideFlags: 0
