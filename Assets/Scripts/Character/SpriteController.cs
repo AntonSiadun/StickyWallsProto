@@ -21,11 +21,38 @@ public class SpriteController : MonoBehaviour
                                                         _characterTransform.localScale.y,
                                                         _characterTransform.localScale.z);
     }
-
+   
     public void ReverseScale()
     {
-        transform.localScale = new Vector3(-transform.localScale.x,
-                                            transform.localScale.y,
-                                            transform.localScale.z);
+        SetScale(-1);
+    }
+
+    private void SetScale(int multipier)
+    {
+        transform.localScale = new Vector3(multipier * transform.localScale.x,
+                         transform.localScale.y,
+                         transform.localScale.z);
+    }
+
+    public void ScaleToObject(Vector3 objectPosition)
+    {
+        if (transform.position.x < objectPosition.x)
+            SetPositiveScale();
+        else
+            SetNegativeScale();
+    }
+
+    private void SetPositiveScale()
+    {
+        transform.localScale = new Vector3(Math.Abs(transform.localScale.x),
+                         transform.localScale.y,
+                         transform.localScale.z);
+    }
+
+    private void SetNegativeScale()
+    {
+        transform.localScale = new Vector3(-Math.Abs(transform.localScale.x),
+                         transform.localScale.y,
+                         transform.localScale.z);
     }
 }
