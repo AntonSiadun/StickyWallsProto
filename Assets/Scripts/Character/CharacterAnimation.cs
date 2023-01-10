@@ -3,12 +3,10 @@ using UnityEngine;
 public class CharacterAnimation : MonoBehaviour
 {
     private Animator _animator;
-    private SpriteController _controller;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _controller = GetComponent<SpriteController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +26,6 @@ public class CharacterAnimation : MonoBehaviour
         if (collision.CompareTag("Wall"))
         {
             _animator.SetTrigger("OnAir");
-            _controller.ReverseScale();
         }
     }
 }

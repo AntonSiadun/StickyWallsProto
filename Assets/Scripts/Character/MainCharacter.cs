@@ -13,6 +13,7 @@ namespace Domain.Movement
         [SerializeField] private float _groundCheckRadius = 1f;
         [SerializeField] private float _secondJumpForceMultipier = 0.1f;
         [SerializeField] private Vector2 _direction;
+        [SerializeField] private SpriteController _spriteController;
 
         private IMovement _movement;
         private IGravity _gravity;
@@ -64,6 +65,7 @@ namespace Domain.Movement
         public void TurnBack()
         {
             _movement.TurnBack();
+            _spriteController.ReverseScale();
         }
 
         public void Pulse(float force)

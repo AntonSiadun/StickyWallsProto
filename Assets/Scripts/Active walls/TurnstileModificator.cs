@@ -10,14 +10,16 @@ namespace Domain.Interactions.Active
         [SerializeField] private float _cooldown;
 
         private MainCharacter _character;
+        private SpriteController _spriteController;
 
         [Inject]
-        public void Initialize(MainCharacter character)
+        public void Initialize(MainCharacter character, SpriteController spriteController)
         {
             if (character == null)
                 throw new System.NullReferenceException("Character is empty.");
 
             _character = character;
+            _spriteController = spriteController;
         }
 
         private void Start()
@@ -42,7 +44,10 @@ namespace Domain.Interactions.Active
             yield return null;
 
             if( transform == _character.transform.parent)
+            {
                 _character.TurnBack();
+                _spriteController.ReverseScale();
+            }
 
             transform.localScale = new Vector3(-transform.localScale.x,
                                                 transform.localScale.y,
