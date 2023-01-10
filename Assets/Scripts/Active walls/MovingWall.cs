@@ -3,17 +3,23 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Domain.Interactions.Active
+namespace Domain.Interactions.Triggered
 {
-    public class MovingWall : MonoBehaviour
+    public class MovingWall : ReactiveComponent
     {
         [SerializeField] private List<Transform> _path = new List<Transform>();
         [SerializeField] private float _duration = 1f;
         [SerializeField] private float _delay = 1f;
 
-        void Start()
+        private bool _isReady = true;
+
+        public override void OnEnter(GameObject anObject)
         {
-            MoveByRoute();
+            if (_isReady)
+            {
+                _isReady = false;
+                MoveByRoute();
+            }
         }
 
         private void MoveByRoute()
@@ -24,9 +30,14 @@ namespace Domain.Interactions.Active
 
             Sequence sequence = DOTween.Sequence();
 
-            sequence.SetDelay(_delay).Append(tween).AppendInterval(_delay);
+            sequence.SetDelay(0.5f).Append(tween).AppendInterval(_delay).OnComplete(SetReady);
 
-            sequence.SetLoops(-1, LoopType.Yoyo).Play();
+            sequence.SetLoops(2, LoopType.Yoyo).Play();
+        }
+
+        private void SetReady()
+        {
+             _isReady = true;
         }
 
         public void OnDestroy()
