@@ -9,14 +9,13 @@ namespace Domain.Interactions.Triggered
         [SerializeField] private Transform _parent;
 
         private Transform _characterTransform;
+        private Transform _cachedParent;
 
         [Inject]
         public void Initialize(MainCharacter character)
         {
             _characterTransform = character.gameObject.transform;
         }
-
-        private Transform _cachedParent;
 
         public override void OnEnter(GameObject anObject)
         {
