@@ -233,7 +233,7 @@ MonoBehaviour:
   - {fileID: 2552435639989940427}
   - {fileID: 2552435640031279153}
   _duration: 1
-  _delay: 5
+  _delay: 3
 --- !u!114 &1385489013909209963
 MonoBehaviour:
   m_ObjectHideFlags: 0
