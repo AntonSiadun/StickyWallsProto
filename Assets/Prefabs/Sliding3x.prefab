@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 888454550557921890}
   - component: {fileID: 888454550557921889}
   - component: {fileID: 888454550557921888}
-  - component: {fileID: -7486981474770072960}
   - component: {fileID: 4571684370412573153}
+  - component: {fileID: 5705739211027119046}
   m_Layer: 3
   m_Name: Sliding3x
   m_TagString: Wall
@@ -168,19 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clutch: -0.5
   _spriteController: {fileID: 0}
---- !u!114 &-7486981474770072960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888454550557921919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _containerSource: 0
 --- !u!114 &4571684370412573153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7f9050929f243a2913958ef8f3c9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5705739211027119046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888454550557921919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 2
