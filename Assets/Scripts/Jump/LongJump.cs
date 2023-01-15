@@ -9,6 +9,7 @@ namespace Domain.Movement.JumpController
     {
         [SerializeField] private float _jumpDuration;
         [SerializeField] private int _jumpsCount;
+        [SerializeField] private JumpPlayer _player;
 
         public int CurrentCount;
 
@@ -70,6 +71,7 @@ namespace Domain.Movement.JumpController
 
         private void ReleaseJump()
         {
+            _player.Play();
             _counter.Decrement();
             _character.Jump();
             _jumpContinue = true;
