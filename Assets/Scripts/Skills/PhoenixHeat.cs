@@ -12,6 +12,11 @@ public class PhoenixHeat : MonoBehaviour
     private float _cachedOuterRadius;
     private Color _cachedColor;
 
+    private void Awake()
+    {
+        Save();
+    }
+
     public void Activate()
     {
         if (!_isActive)
