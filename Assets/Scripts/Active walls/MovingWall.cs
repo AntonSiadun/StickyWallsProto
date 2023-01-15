@@ -9,20 +9,33 @@ namespace Domain.Interactions.Triggered
     {
         [SerializeField] private List<Transform> _path = new List<Transform>();
         [SerializeField] private float _duration = 1f;
+        [SerializeField] private float _prewarmDelay = 0.5f;
         [SerializeField] private float _delay = 1f;
+        [SerializeField] private bool _movingByTrigger = true;
 
         private bool _isReady = true;
 
         public override void OnEnter(GameObject anObject)
         {
-            if (_isReady)
+            if (_isReady && _movingByTrigger)
             {
                 _isReady = false;
-                MoveByRoute();
+                MoveByRoute(2);
             }
         }
 
-        private void MoveByRoute()
+        private void Awake()
+        {
+            if (!_movingByTrigger)
+            {
+                MoveByRoute(-1);
+            }
+
+        }
+
+        
+
+        private void MoveByRoute(int loops)
         {
             Tween tween = transform.DOPath(_path.Select(x => x.position).ToArray(),
                 _duration, PathType.Linear, PathMode.Sidescroller2D, 10, Color.blue)
@@ -30,9 +43,9 @@ namespace Domain.Interactions.Triggered
 
             Sequence sequence = DOTween.Sequence();
 
-            sequence.SetDelay(0.5f).Append(tween).AppendInterval(_delay).OnComplete(SetReady);
+            sequence.SetDelay(_prewarmDelay).Append(tween).AppendInterval(_delay).OnComplete(SetReady);
 
-            sequence.SetLoops(2, LoopType.Yoyo).Play();
+            sequence.SetLoops(loops, LoopType.Yoyo).Play();
         }
 
         private void SetReady()
