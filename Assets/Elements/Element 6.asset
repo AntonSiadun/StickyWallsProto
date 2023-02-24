@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb1139091b784c2291c96d21156e89c, type: 3}
   m_Name: Element 6
   m_EditorClassIdentifier: 
-  Wall: {fileID: 426412520374840958, guid: c54b5634aeeaa4fbd8d1a622d8d15998, type: 3}
-  Start: {x: 0, y: 0, z: 0}
-  End: {x: 0, y: 0, z: 0}
+  Wall:
+    m_AssetGUID: 167c65adf65ec446b8c29c20aa612575
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  Start: {x: 0, y: 3, z: 0}
+  End: {x: 0, y: 6, z: 0}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4192771742563202997}
   - component: {fileID: 8533935246045303854}
   - component: {fileID: 6685927086079696870}
+  - component: {fileID: 697900237546456885}
   m_Layer: 3
   m_Name: Discharge
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1974472757, guid: 6fd1c97a3662d4b4a824b52eded7d857, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +87,7 @@ SpriteRenderer:
   m_Size: {x: 0.602353, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4192771742563202995
@@ -164,6 +165,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _containerSource: 0
+--- !u!114 &697900237546456885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192771742563202996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fe3590a5e28455aa825c906051c21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: discharge
 --- !u!1 &4192771743625642111
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +245,7 @@ GameObject:
   - component: {fileID: 4192771744356446287}
   - component: {fileID: 2593857484305998423}
   - component: {fileID: 871503192807926054}
+  - component: {fileID: 2097343215312728369}
   m_Layer: 3
   m_Name: Fixed
   m_TagString: Wall
@@ -294,7 +309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1469937419, guid: 6fd1c97a3662d4b4a824b52eded7d857, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,7 +317,7 @@ SpriteRenderer:
   m_Size: {x: 0.602353, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4192771744356446282
@@ -408,6 +423,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _containerSource: 0
+--- !u!114 &2097343215312728369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192771744356446286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fe3590a5e28455aa825c906051c21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: electric
 --- !u!1 &5028503058354897978
 GameObject:
   m_ObjectHideFlags: 0

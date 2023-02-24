@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4189699793443190555}
   - component: {fileID: 6945925169064574151}
   - component: {fileID: 3177729447544286354}
+  - component: {fileID: 1654167932499737982}
   m_Layer: 3
   m_Name: Checkpoint
   m_TagString: Wall
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1455659513, guid: 6fd1c97a3662d4b4a824b52eded7d857, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_Size: {x: 0.602353, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2215552640227090874
@@ -206,3 +207,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _containerSource: 0
+--- !u!114 &1654167932499737982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471759789752676428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fe3590a5e28455aa825c906051c21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: checkpoint
